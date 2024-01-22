@@ -1,12 +1,25 @@
 import { useState } from 'react'
+import Categorize from './Categorize'
+import Data from './Data'
+import Menu from './Menu'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [menuItems, setMenuItems] = useState(Data)
+  const [categorize, setCategorize] = useState([])
 
   return (
-    <>
-<h1>hello</h1>
-    </>
+    <main>
+      <section className='menu section'>
+        <div className="title">
+          <h2>Our Menu</h2>
+          <div className="underline"></div>
+        </div>
+        <Categorize/>
+        <Menu item={menuItems}/>
+
+      </section>
+
+    </main>
   )
 }
 
